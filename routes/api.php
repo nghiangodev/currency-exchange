@@ -20,5 +20,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('request-currency', [CurrencyExchange::class, 'requestCurrency'])->name('request_currency');
-Route::get('list-currency', [CurrencyExchange::class, 'getCurrencyData'])->name('list');
 

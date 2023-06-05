@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('title', 'Exchange')
+@section('title', 'About us')
 
 @section('content')
 
@@ -37,10 +37,7 @@
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
                     </div>
                     <div class="full paddding_left_15">
-                        <button type="button" class="main_bt" data-toggle="modal" data-target="#modal_exchange_currency" style="cursor: pointer;">
-                            Exchange Currency >
-                        </button>
-
+                        <a class="main_bt" href="#">Exchange Currency ></a>
                     </div>
                 </div>
             </div>
@@ -49,12 +46,5 @@
 
 @endsection
 
-@section('script')
-    <script src="{{asset('/assets/js/pages/exchange/index.js')}}"></script>
-@endsection
-
-@section('link')
-    <link rel="stylesheet" href="{{asset('/assets/css/component/select2.css')}}"/>
-@endsection
 
 

@@ -27,7 +27,7 @@
     ................................................. */
 
 	$(window).on('scroll', function () {
-		if ($(window).scrollTop()) {
+		if ($(window).scrollTop() > 50) {
 			$('.top-header').addClass('fixed-menu');
 		} else {
 			$('.top-header').removeClass('fixed-menu');
