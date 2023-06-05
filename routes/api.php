@@ -19,5 +19,10 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('request-currency', [CurrencyExchangeController::class, 'requestCurrency'])->name('request_currency');
+Route::group(['prefix' => 'currency', 'middleware' =>  ['api', 'cors']], function() {
+    Route::get('list', [CurrencyExchangeController::class, 'getList '])->name('list');
+    Route::get('request-currency', [CurrencyExchangeController::class, 'requestCurrency'])->name('request_currency');
+});
+
+
 

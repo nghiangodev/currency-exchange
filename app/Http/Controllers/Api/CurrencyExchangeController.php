@@ -13,7 +13,7 @@ class CurrencyExchangeController extends Controller
     protected $endpointCurrencies = 'v3/latest?apikey=U0XClEtdU0Ae8wCqBWeEofOCXBd8Zw4ktSqlwi5J&currencies=EUR%2CUSD%2CCAD';
     protected $endpointAllCurrencies = 'v3/latest?apikey=U0XClEtdU0Ae8wCqBWeEofOCXBd8Zw4ktSqlwi5J';
 
-    public function getCurrencyData(): array
+    public function getList(): array
     {
         $jsonData = file_get_contents(public_path('/assets/documents/currency-exchange.json'));
 
