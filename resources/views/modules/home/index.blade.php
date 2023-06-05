@@ -15,7 +15,7 @@
                                     <div class="slide_text white_fonts">
                                         <h3>Progress & Success<br><strong>Currency</strong></h3>
                                         <br>
-                                        <a class="start_exchange_bt" href="exchange.html">Start Exchange ></a>
+                                        <a class="start_exchange_bt" href="/exchange">Start Exchange ></a>
                                     </div>
                                 </div>
                             </div>
@@ -60,7 +60,7 @@
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
                     </div>
                     <div class="full paddding_left_15">
-                        <a class="main_bt" href="#">About more ></a>
+                        <a class="main_bt" href="/about-us">About more ></a>
                     </div>
                 </div>
             </div>
@@ -109,7 +109,7 @@
                 <div class="col-sm-12">
                     <div class="full">
                         <div class="center">
-                            <a class="main_bt" href="#">About more ></a>
+                            <a class="main_bt" href="/services">About more ></a>
                         </div>
                     </div>
                 </div>
@@ -136,7 +136,7 @@
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
                     </div>
                     <div class="full paddding_left_15">
-                        <a class="main_bt" href="#">Exchange ></a>
+                        <a class="main_bt" href="/exchange">Exchange ></a>
                     </div>
                 </div>
             </div>
@@ -262,6 +262,11 @@
         </div>
     </div>
 
+    @include('modules.modals.updating')
+@endsection
+
+@section('script')
+    <script src="{{asset('/assets/js/pages/home/index.js')}}"></script>
 @endsection
 
 

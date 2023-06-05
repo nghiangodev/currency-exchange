@@ -18,7 +18,7 @@ use App\Http\Controllers\Web\{HomesController,AboutUsController,ContactUsControl
 Route::get('/', [HomesController::class,'index']);
 Route::get('/about-us', [AboutUsController::class,'index']);
 Route::get('/contact-us', [ContactUsController::class,'index']);
-Route::get('/exchange', [ExchangesController::class,'index']);
+Route::get('/exchange', [ExchangesController::class,'index'])->name('exchange-currency');
 Route::get('/exchange', [ExchangesController::class,'index']);
 Route::get('/services', [ServicesController::class,'index']);
 Route::get('/news', [NewsController::class,'index']);
