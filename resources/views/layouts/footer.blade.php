@@ -81,5 +81,9 @@
 <script src="{{asset('/assets/js/plugins/isotope.min.js')}}"></script>
 <script src="{{asset('/assets/js/plugins/images-loded.min.js')}}"></script>
 <script src="{{asset('/assets/js/plugins/custom.js')}}"></script>
+<script src="{{asset('/assets/js/plugins/select2.min.js')}}"></script>
 <!-- ALL PLUGINS -->
-<script src="{{asset('/assets/js/pages/home/index.js')}}"></script>
+
+@yield('script')
+
+

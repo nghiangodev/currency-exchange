@@ -1,4 +1,5 @@
 (function ($) {
+
     $.fn.countTo = function (options) {
         options = options || {};
 

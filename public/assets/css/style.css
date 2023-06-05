@@ -1,4 +1,4 @@
-/*------------------------------------------------------------------
+  /*------------------------------------------------------------------
     IMPORT FONTS
 -------------------------------------------------------------------*/
 
@@ -12,12 +12,12 @@
     IMPORT FILES
 -------------------------------------------------------------------*/
 
-@import url(animate.css);
+@import url(plugins/animate.css);
 @import url(font-awesome.min.css);
-@import url(magnific-popup.css);
-@import url(responsiveslides.css);
-@import url(timeline.css);
-@import url(flaticon.css);
+@import url(plugins/magnific-popup.css);
+@import url(plugins/responsiveslides.css);
+@import url(plugins/timeline.css);
+@import url(plugins/flaticon.css);
 
 /*------------------------------------------------------------------
     SKELETON
