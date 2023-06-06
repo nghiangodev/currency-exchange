@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FileZilla3 version="3.63.2.1" platform="windows">
+	<Servers>
+		<Server>
+			<Host>185.27.134.11</Host>
+			<Port>21</Port>
+			<Protocol>0</Protocol>
+			<Type>0</Type>
+			<User>if0_34364688</User>
+			<Pass encoding="base64">RkVmdXZ4anE5cGZVQ3U=</Pass>
+			<Logontype>1</Logontype>
+			<PasvMode>MODE_DEFAULT</PasvMode>
+			<EncodingType>Auto</EncodingType>
+			<BypassProxy>0</BypassProxy>
+			<Name>inisfee</Name>
+			<LocalDir>C:\xampp\htdocs\currency-exchange</LocalDir>
+			<RemoteDir>1 0 6 htdocs</RemoteDir>
+			<SyncBrowsing>0</SyncBrowsing>
+			<DirectoryComparison>0</DirectoryComparison>
+		</Server>
+	</Servers>
+</FileZilla3>

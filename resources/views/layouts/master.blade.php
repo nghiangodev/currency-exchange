@@ -47,7 +47,7 @@
 </head>
 @extends('layouts.header')
 
-<body id="home" data-spy="scroll" data-target="#navbar-wd" data-offset="98">
+<body id="home" class="no-scroll" data-spy="scroll" data-target="#navbar-wd" data-offset="98">
 <!-- LOADER -->
 <div id="preloader">
     <div class="loader">

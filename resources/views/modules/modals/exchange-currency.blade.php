@@ -1,4 +1,4 @@
-<div class="modal fade" id="modal_exchange_currency" tabindex="-1" role="dialog" aria-labelledby="modal_exchange_currency" aria-hidden="true">
+<div class="modal fade" id="modal_exchange_currency" role="dialog" aria-labelledby="modal_exchange_currency" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -10,16 +10,22 @@
             <div class="modal-body">
                 <form action="{{route('request_currency')}}" method="POST">
                     @csrf
-                    <div class="form-group">
-                        <select class="js-example-basic-single js-data-example-ajax" name="state"></select>
+                    <div class="vLqKYe egcvbb q0WxUd" data-exchange-rate="103.1873536" data-mid="/m/021x2r" data-name="Đô la Brunei">
+                        <input class="lWzCpb ZEB7Fb" name="currency_from" value="" type="text" placeholder="Enter input the currency">
+                        <div class="xNzW0d">
+                            <div class="aURkK"></div>
+                            <select class="js-example-basic-single js-data-example-ajax" name="currency_from">
+                                <option value="VND" selected="selected">VND</option>
+                            </select>
+                        </div>
                     </div>
-                    <div>
-                        <label class="sr-only" for="inlineFormInputGroup">Username</label>
-                        <div class="input-group mb-2">
-                            <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Username">
-                            <div class="input-group-prepend">
-                                <div class="input-group-text bg-main">@</div>
-                            </div>
+                    <div class="vLqKYe egcvbb q0WxUd" data-exchange-rate="103.1873536" data-mid="/m/021x2r" data-name="Đô la Brunei">
+                        <input class="lWzCpb ZEB7Fb" name="currency_to" value="" type="text" placeholder="Enter input the currency">
+                        <div class="xNzW0d">
+                            <div class="aURkK"></div>
+                            <select class="js-example-basic-single js-data-example-ajax" name="currency_to">
+                                <option value="ADA" selected="selected">ADA</option>
+                            </select>
                         </div>
                     </div>
                 </form>
@@ -29,6 +35,5 @@
             </div>
         </div>
     </div>
-
 </div>
 

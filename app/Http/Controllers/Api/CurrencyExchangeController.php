@@ -13,23 +13,40 @@ class CurrencyExchangeController extends Controller
     protected $endpointCurrencies = 'v3/latest?apikey=U0XClEtdU0Ae8wCqBWeEofOCXBd8Zw4ktSqlwi5J&currencies=EUR%2CUSD%2CCAD';
     protected $endpointAllCurrencies = 'v3/latest?apikey=U0XClEtdU0Ae8wCqBWeEofOCXBd8Zw4ktSqlwi5J';
 
-    public function getList(): array
+    public function getList(Request $request): array
     {
         $jsonData = file_get_contents(public_path('/assets/documents/currency-exchange.json'));
 
         $data = json_decode($jsonData, true);
 
-        return array_keys($data);
+        $newArray = [];
+
+// Loop through each key-value pair
+        foreach ($data as $key => $value) {
+            // Set key as the value for each element in new array
+            $newArray[] = [
+                'id'   => $key,
+                'text' => $key,
+            ];
+        }
+
+        if ($request->q) {
+            $newArray = array_values(array_filter($newArray, function ($item) use ($request){
+                return strpos($item['id'], strtoupper($request->q)) === 0;
+            }));
+        }
+        return $newArray;
     }
+
     public function requestCurrency(Request $request)
     {
-        dd($request);
-
         $currencyApi = new CurrencyApiClient('U0XClEtdU0Ae8wCqBWeEofOCXBd8Zw4ktSqlwi5J');
 
-        return $currencyApi->latest([
-            'base_currency' => 'VND',
-            'currencies'    => 'EUR',
+        $data = $currencyApi->latest([
+            'base_currency' => $request->currentfrom,
+            'currencies'    => $request->currentTo,
         ]);
+
+        dd($data);
     }
 }

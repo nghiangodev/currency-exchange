@@ -82,6 +82,8 @@
 <script src="{{asset('/assets/js/plugins/images-loded.min.js')}}"></script>
 <script src="{{asset('/assets/js/plugins/custom.js')}}"></script>
 <script src="{{asset('/assets/js/plugins/select2.min.js')}}"></script>
+<script src="{{asset('/assets/js/plugins/jquery.alphanum.js')}}"></script>
+<script src="{{asset('/assets/js/plugins/axios.min.js')}}"></script>
 <!-- ALL PLUGINS -->
 
 @yield('script')

@@ -1,12 +1,14 @@
 .select2-container{
     width: 100% !important;
+    height: 100% !important;
 }
 
 .select2-container .select2-selection--single{
     padding:6px;
-    height: 37px;
+    height: 100%;
     font-size: 1.2em;
     position: relative;
+    border-radius: unset;
 }
 
 .select2-container .select2-selection--single .select2-selection__arrow {
@@ -21,7 +23,7 @@
     color: #fff;
     font-size: 1.3em;
     padding: 18px 12px;
-    height: 27px;
+    height: 100%;
     position: absolute;
     top: 0px;
     right: 0px;
