@@ -405,7 +405,7 @@ a.join_bt:focus {
 }
 
 .top-header {
-    position: relative;
+    /*position: relative;*/
     top: 0px;
     left: 0px;
     width: 100%;
