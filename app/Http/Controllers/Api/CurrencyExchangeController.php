@@ -31,22 +31,37 @@ class CurrencyExchangeController extends Controller
         }
 
         if ($request->q) {
-            $newArray = array_values(array_filter($newArray, function ($item) use ($request){
+            $newArray = array_values(array_filter($newArray, function ($item) use ($request) {
                 return strpos($item['id'], strtoupper($request->q)) === 0;
             }));
         }
+
         return $newArray;
     }
 
     public function requestCurrency(Request $request)
     {
         $currencyApi = new CurrencyApiClient('U0XClEtdU0Ae8wCqBWeEofOCXBd8Zw4ktSqlwi5J');
-
-        $data = $currencyApi->latest([
+        $data        = $currencyApi->latest([
             'base_currency' => $request->currentfrom,
             'currencies'    => $request->currentTo,
         ]);
 
-        dd($data);
+        if ( ! isset($data['errors'])) {
+            $currency          = $data['data'];
+            $valueInputFrom    = str_replace(['.', ','], '', $request->valueFrom);
+            $currencyFromValue = $currency[$request->currentTo]['value'];
+            $exchange          = $valueInputFrom * $currencyFromValue;
+
+            return response([
+                'data'     => $data['data'],
+                'exchange' => $exchange,
+            ]);
+        }
+
+        return response([
+            'data' => $data,
+        ]);
+
     }
 }

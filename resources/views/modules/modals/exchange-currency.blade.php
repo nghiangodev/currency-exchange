@@ -20,6 +20,9 @@
                         </div>
                     </div>
                     <div class="vLqKYe egcvbb q0WxUd" data-exchange-rate="103.1873536" data-mid="/m/021x2r" data-name="Đô la Brunei">
+                      <span class="text-main">You can only enter numbers from 1 to 9 and decimal like 3.14</span>
+                    </div>
+                    <div class="vLqKYe egcvbb q0WxUd" data-exchange-rate="103.1873536" data-mid="/m/021x2r" data-name="Đô la Brunei">
                         <input class="lWzCpb ZEB7Fb" name="currency_to" value="" type="text" placeholder="Enter input the currency">
                         <div class="xNzW0d">
                             <div class="aURkK"></div>
@@ -28,10 +31,13 @@
                             </select>
                         </div>
                     </div>
+                    <div class="vLqKYe egcvbb q0WxUd" data-exchange-rate="103.1873536" data-mid="/m/021x2r" data-name="Đô la Brunei">
+                        <span class="text-main">You can only enter numbers from 1 to 9 and decimal like 3.14</span>
+                    </div>
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-main" data-dismiss="modal">Ok</button>
+                <button type="button" class="btn btn-main" data-dismiss="modal">Close</button>
             </div>
         </div>
     </div>

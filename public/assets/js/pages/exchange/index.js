@@ -19,7 +19,19 @@ $(document).ready(function() {
         },
     })
 
-    $('input').numeric()
+    $('input').numeric({
+        allowPlus: false,
+        allowMinus: false,
+        allowThouSep: false,
+        allowDecSep: true,
+        allowLeadingSpaces: false,
+    })
+
+    $('input').on('keyup', function() {
+        if ($(this).val() <= 0) {
+            $(this).val('')
+        }
+    })
 
     let selectCurrencyFrom = $('select[name="currency_from"]').val()
     let selectCurrencyTo = $('select[name="currency_to"]').val()
@@ -50,23 +62,47 @@ $(document).ready(function() {
         }
     })
 
-    $('body').on('change',function(){
+    $('body').on('keyup', 'input[name="currency_from"]', function() {
         let selectCurrencyFrom = $('select[name="currency_from"]').val()
         let selectCurrencyTo = $('select[name="currency_to"]').val()
         let inputCurrencyFrom = $('input[name="currency_from"]').val()
-        let inputCurrencyTo = $('input[name="currency_to"]').val()
+        if (inputCurrencyFrom) {
+            if (selectCurrencyFrom && selectCurrencyTo && inputCurrencyFrom) {
+                axios.post(baseUrl + 'api/currency/request', {
+                    currentfrom: $('select[name="currency_from"]').val(),
+                    currentTo: $('select[name="currency_to"]').val(),
+                    valueFrom: $('input[name="currency_from"]').val(),
+                }).then(function(response) {
+                    if (response['data']) {
+                        let data = response['data']
+                        $('input[name="currency_to"]').val(data.exchange)
+                    }
+                }).catch(function(error) {
+                    console.log(error)
+                })
+            }
+        }
+    })
 
-        if (selectCurrencyFrom && selectCurrencyTo && (inputCurrencyFrom || inputCurrencyTo)) {
-            axios.post(baseUrl + 'api/currency/request', {
-                currentfrom: $('select[name="currency_from"]').val(),
-                currentTo: $('select[name="currency_to"]').val(),
-                valueFrom: $('input[name="currency_from"]').val(),
-                valueTom: $('input[name="currency_to"]').val(),
-            }).then(function(response) {
-                console.log(response)
-            }).catch(function(error) {
-                console.log(error)
-            })
+    $('body').on('keyup', 'input[name="currency_to"]', function() {
+        let selectCurrencyFrom = $('select[name="currency_from"]').val()
+        let selectCurrencyTo = $('select[name="currency_to"]').val()
+        let inputCurrencyTo = $('input[name="currency_to"]').val()
+        if (inputCurrencyTo) {
+            if (selectCurrencyFrom && selectCurrencyTo && inputCurrencyTo) {
+                axios.post(baseUrl + 'api/currency/request', {
+                    currentfrom: $('select[name="currency_to"]').val(),
+                    currentTo: $('select[name="currency_from"]').val(),
+                    valueFrom: $('input[name="currency_to"]').val(),
+                }).then(function(response) {
+                    if (response['data']) {
+                        let data = response['data']
+                        $('input[name="currency_from"]').val(data.exchange)
+                    }
+                }).catch(function(error) {
+                    console.log(error)
+                })
+            }
         }
     })
 })
