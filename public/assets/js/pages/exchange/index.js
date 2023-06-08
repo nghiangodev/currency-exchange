@@ -19,7 +19,7 @@ $(document).ready(function() {
         },
     })
 
-    $('input').numeric({
+    $('input[name="currency_from"],input[name="currency_to"]').numeric({
         allowPlus: false,
         allowMinus: false,
         allowThouSep: false,
@@ -27,7 +27,7 @@ $(document).ready(function() {
         allowLeadingSpaces: false,
     })
 
-    $('input').on('keyup', function() {
+    $('input[name="currency_from"],input[name="currency_to"]').on('keyup', function() {
         if ($(this).val() <= 0) {
             $(this).val('')
         }
