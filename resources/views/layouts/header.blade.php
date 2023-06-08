@@ -1,4 +1,4 @@
-<!-- Start header -->
+
 <header class="top-header">
     <div class="header_top">
         <div class="container">
@@ -32,9 +32,9 @@
                                     <li><a class="nav-link {{ \App\helpers\checkActiveLink('/') }}" href="/">Home</a></li>
                                     <li><a class="nav-link {{ \App\helpers\checkActiveLink('/about-us') }}" href="/about-us">About</a></li>
                                     <li><a class="nav-link {{ \App\helpers\checkActiveLink('/exchange') }}" href="/exchange">Exchange</a></li>
-                                    <li><a class="nav-link {{ \App\helpers\checkActiveLink('/services') }}" href="/services">Services</a></li>
+{{--                                    <li><a class="nav-link {{ \App\helpers\checkActiveLink('/services') }}" href="/services">Services</a></li>--}}
                                     <li><a class="nav-link {{ \App\helpers\checkActiveLink('/news') }}" href="/news">News</a></li>
-                                    <li><a class="nav-link {{ \App\helpers\checkActiveLink('/contact-us') }}" href="/contact-us">Contact</a></li>
+{{--                                    <li><a class="nav-link {{ \App\helpers\checkActiveLink('/contact-us') }}" href="/contact-us">Contact</a></li>--}}
                                 </ul>
                             </div>
                         </div>
@@ -51,4 +51,4 @@
     </div>
 
 </header>
-<!-- End header -->
+

@@ -46,7 +46,6 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
-@extends('layouts.header')
 
 <body id="home" class="no-scroll" data-spy="scroll" data-target="#navbar-wd" data-offset="98">
 <!-- LOADER -->
@@ -56,6 +55,7 @@
     </div>
 </div>
 <!-- end loader -->
+@include('layouts.header')
 
 @yield('content')
 <!-- END LOADER -->
@@ -65,6 +65,6 @@
 @include('modules.modals.exchange-currency')
 
 </body>
-@extends('layouts.footer')
+@include('layouts.footer')
 
 </html>
