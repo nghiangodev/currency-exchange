@@ -1,6 +1,4 @@
-@extends('layouts.master')
-
-@section('title', 'Page Title')
+@extends('layouts.master')@section('title', 'Page Title')
 
 @section('content')
     <!-- Start Banner -->
@@ -13,8 +11,7 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="slide_text white_fonts">
-                                        <h3>Progress & Success<br><strong>Currency</strong></h3>
-                                        <br>
+                                        <h3>Progress & Success<br><strong>Currency</strong></h3><br>
                                         <a class="start_exchange_bt" href="/exchange">Start Exchange ></a>
                                     </div>
                                 </div>
@@ -26,8 +23,7 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="slide_text white_fonts">
-                                        <h3>Progress & Success<br><strong>Currency</strong></h3>
-                                        <br>
+                                        <h3>Progress & Success<br><strong>Currency</strong></h3><br>
                                         <a class="start_exchange_bt" href="exchange.html">Start Exchange ></a>
                                     </div>
                                 </div>
@@ -47,7 +43,7 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="full text_align_right_img">
-                        <img src="{{asset('/assets/images/img1.png')}}" alt="#" />
+                        <img src="{{asset('/assets/images/img1.png')}}" alt="#"/>
                     </div>
                 </div>
                 <div class="col-md-6 layout_padding">
@@ -55,12 +51,34 @@
                         <div class="heading_main text_align_left">
                             <h2><span class="theme_color">Welcome</span> To Exchange</h2>
                         </div>
+                        <h4 class="pb-4"><span class="theme_color">Please enter the data you want to convert here</span></h4>
                     </div>
                     <div class="full paddding_left_15">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+                        <form action="{{route('request_currency')}}" method="POST">
+                            @csrf
+                            <div class="d-flex flex-row justify-content-between">
+                                <input class="form-control mr-4" name="currency_from" value="" type="text" placeholder="Enter input the currency">
+                                <select class="js-example-basic-single js-data-example-ajax form-control" name="currency_from">
+                                    <option value="VND" selected="selected">VND</option>
+                                </select>
+
+                            </div>
+                            <div class="pb-4" data-exchange-rate="103.1873536" data-mid="/m/021x2r" data-name="Đô la Brunei">
+                                <span class="text-main">You can only enter numbers from 1 to 9 and decimal like 3.14</span>
+                            </div>
+                            <div class="d-flex flex-row justify-content-between">
+                                <input class="form-control mr-4" name="currency_to" value="" type="text" placeholder="Enter input the currency">
+                                <select class="js-example-basic-single js-data-example-ajax form-control" name="currency_to">
+                                    <option value="ADA" selected="selected">ADA</option>
+                                </select>
+                            </div>
+                            <div class=" pb-4" data-exchange-rate="103.1873536" data-mid="/m/021x2r" data-name="Đô la Brunei">
+                                <span class="text-main">You can only enter numbers from 1 to 9 and decimal like 3.14</span>
+                            </div>
+                        </form>
                     </div>
                     <div class="full paddding_left_15">
-                        <a class="main_bt" href="/about-us">About more ></a>
+                        <a class="main_bt" href="/exchange">About more ></a>
                     </div>
                 </div>
             </div>
@@ -82,25 +100,25 @@
             <div class="row">
                 <div class="col-md-3 col-sm-6 col-xs-12">
                     <div class="full services_blog">
-                        <img class="img-responsive" src="{{asset('/assets/images/s1.png')}}" alt="#" />
+                        <img class="img-responsive" src="{{asset('/assets/images/s1.png')}}" alt="#"/>
                         <h4>Safe & Secure</h4>
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-6 col-xs-12">
                     <div class="full services_blog">
-                        <img class="img-responsive" src="{{asset('/assets/images/s1.png')}}" alt="#" />
+                        <img class="img-responsive" src="{{asset('/assets/images/s1.png')}}" alt="#"/>
                         <h4>Mobile Apps</h4>
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-6 col-xs-12">
                     <div class="full services_blog">
-                        <img class="img-responsive" src="{{asset('/assets/images/s1.png')}}" alt="#" />
+                        <img class="img-responsive" src="{{asset('/assets/images/s1.png')}}" alt="#"/>
                         <h4>Wallet</h4>
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-6 col-xs-12">
                     <div class="full services_blog">
-                        <img class="img-responsive" src="{{asset('/assets/images/s1.png')}}" alt="#" />
+                        <img class="img-responsive" src="{{asset('/assets/images/s1.png')}}" alt="#"/>
                         <h4>Experts Support</h4>
                     </div>
                 </div>
@@ -123,7 +141,7 @@
             <div class="row">
                 <div class="col-md-6" style="background: #fff;">
                     <div class="full text_align_right_img">
-                        <img src="{{asset('/assets/images/img2.png')}}" alt="#" />
+                        <img src="{{asset('/assets/images/img2.png')}}" alt="#"/>
                     </div>
                 </div>
                 <div class="col-md-6 layout_padding">
@@ -133,7 +151,9 @@
                         </div>
                     </div>
                     <div class="full paddding_left_15">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                           nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+                           dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
                     </div>
                     <div class="full paddding_left_15">
                         <a class="main_bt" href="/exchange">Exchange ></a>
@@ -154,7 +174,9 @@
                         </div>
                     </div>
                     <div class="full paddding_left_15">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                           nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+                           dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
                     </div>
                     <div class="full paddding_left_15">
                         <a class="main_bt" href="#">Read More ></a>
@@ -162,7 +184,7 @@
                 </div>
                 <div class="col-md-6">
                     <div class="full text_align_right_img">
-                        <img src="{{asset('/assets/images/img3.png')}}" alt="#" />
+                        <img src="{{asset('/assets/images/img3.png')}}" alt="#"/>
                     </div>
                 </div>
             </div>
@@ -184,7 +206,7 @@
             <div class="row">
                 <div class="col-md-4 col-sm-6 col-xs-12">
                     <div class="full news_blog">
-                        <img class="img-responsive" src="{{asset('/assets/images/b1.png')}}" alt="#" />
+                        <img class="img-responsive" src="{{asset('/assets/images/b1.png')}}" alt="#"/>
                         <div class="overlay"><a class="main_bt transparent" href="#">View</a></div>
                         <div class="blog_details">
                             <h3>Bitcoin News</h3>
@@ -194,7 +216,7 @@
                 </div>
                 <div class="col-md-4 col-sm-6 col-xs-12">
                     <div class="full news_blog">
-                        <img class="img-responsive" src="{{asset('/assets/images/b2.png')}}" alt="#" />
+                        <img class="img-responsive" src="{{asset('/assets/images/b2.png')}}" alt="#"/>
                         <div class="overlay"><a class="main_bt transparent" href="#">View</a></div>
                         <div class="blog_details">
                             <h3>Ethereum News</h3>
@@ -204,7 +226,7 @@
                 </div>
                 <div class="col-md-4 col-sm-6 col-xs-12">
                     <div class="full news_blog">
-                        <img class="img-responsive" src="{{asset('/assets/images/b3.png')}}" alt="#" />
+                        <img class="img-responsive" src="{{asset('/assets/images/b3.png')}}" alt="#"/>
                         <div class="overlay"><a class="main_bt transparent" href="#">View</a></div>
                         <div class="blog_details">
                             <h3>Light News</h3>
@@ -240,13 +262,13 @@
                         <form class="contact_form_inner" action="#">
                             <fieldset>
                                 <div class="field">
-                                    <input type="text" name="name" placeholder="Your name" />
+                                    <input type="text" name="name" placeholder="Your name"/>
                                 </div>
                                 <div class="field">
-                                    <input type="email" name="email" placeholder="Email" />
+                                    <input type="email" name="email" placeholder="Email"/>
                                 </div>
                                 <div class="field">
-                                    <input type="text" name="phone_no" placeholder="Phone number" />
+                                    <input type="text" name="phone_no" placeholder="Phone number"/>
                                 </div>
                                 <div class="field">
                                     <textarea placeholder="Message"></textarea>
@@ -267,6 +289,7 @@
 
 @section('script')
     <script src="{{asset('/assets/js/pages/home/index.js')}}"></script>
+    <script src="{{asset('/assets/js/pages/exchange/index.js')}}"></script>
 @endsection
 
 
